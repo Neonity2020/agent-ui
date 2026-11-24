@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "thread-error-banner",
+  "title": "Thread Error Banner",
+  "description": "Glassmorphic thread-level error alert with line-clamped full-message tooltip and dismiss control.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button",
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/agent/thread-error-banner.tsx",
+      "content": "import { CircleAlertIcon, XIcon } from \"lucide-react\";\nimport { memo } from \"react\";\n\nimport { Alert, AlertAction, AlertDescription } from \"@/components/ui/alert\";\nimport { Button } from \"@/components/ui/button\";\nimport { Tooltip, TooltipPopup, TooltipTrigger } from \"@/components/ui/tooltip\";\nimport { cn } from \"@/lib/utils\";\n\nexport const ThreadErrorBanner = memo(function ThreadErrorBanner({\n  error,\n  onDismiss,\n  className,\n}: {\n  error: string | null;\n  onDismiss?: () => void;\n  className?: string;\n}) {\n  if (!error) return null;\n\n  return (\n    <div\n      className={cn(\n        \"pointer-events-auto mx-auto w-fit max-w-[min(48rem,calc(100%-2rem))]\",\n        className,\n      )}\n    >\n      <Alert\n        variant=\"error\"\n        controlAlignment=\"first-line\"\n        className=\"alert-glass\"\n      >\n        <CircleAlertIcon />\n        <AlertDescription>\n          <Tooltip>\n            <TooltipTrigger render={<div className=\"line-clamp-3 cursor-default\" />}>\n              {error}\n            </TooltipTrigger>\n            <TooltipPopup side=\"top\" className=\"max-w-96 whitespace-pre-wrap\">\n              {error}\n            </TooltipPopup>\n          </Tooltip>\n        </AlertDescription>\n        {onDismiss && (\n          <AlertAction>\n            <Button variant=\"ghost\" size=\"icon-xs\" aria-label=\"Dismiss error\" onClick={onDismiss}>\n              <XIcon className=\"text-destructive\" />\n            </Button>\n          </AlertAction>\n        )}\n      </Alert>\n    </div>\n  );\n});\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

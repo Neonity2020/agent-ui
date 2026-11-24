@@ -1,0 +1,371 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "agent-ui",
+  "homepage": "https://agent-ui.dev",
+  "items": [
+    {
+      "name": "t3-theme",
+      "type": "registry:style",
+      "title": "T3 Theme & Glass Utilities",
+      "description": "t3code Tailwind v4 design tokens, contrast variables, glassmorphism utilities, stepped animations, and 6 theme presets.",
+      "dependencies": ["class-variance-authority", "tailwind-merge"],
+      "files": [
+        {
+          "path": "src/styles/t3-theme.css",
+          "type": "registry:file",
+          "target": "src/styles/t3-theme.css"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Base UI button with t3code tactile bevels, glass variant, micro/compact/icon sizes, and render prop.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "files": [{ "path": "src/components/ui/button.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Compact semantic badge supporting status variants and control/sm/lg sizes.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "files": [{ "path": "src/components/ui/badge.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Slot-aware alert container with error/warning/info/success tints and glass utility support.",
+      "dependencies": ["class-variance-authority"],
+      "files": [{ "path": "src/components/ui/alert.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Base UI text input with compact/sm/default/lg sizes and tactile focus rings.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/input.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Auto-sizing Base UI textarea with field-sizing-content and tactile bevels.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/textarea.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Composite input container with inline/block addons and unified focus rings.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["input", "textarea"],
+      "files": [{ "path": "src/components/ui/input-group.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Keyboard shortcut keycap and keycap group.",
+      "files": [{ "path": "src/components/ui/kbd.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Base UI render-prop form label.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/label.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Base UI horizontal and vertical divider.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/separator.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Duty-cycled stepped breathing loading placeholder.",
+      "files": [{ "path": "src/components/ui/skeleton.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Accessible loading indicator powered by Lucide.",
+      "dependencies": ["lucide-react"],
+      "files": [{ "path": "src/components/ui/spinner.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Base UI toggle switch with elastic thumb squishing transition.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/switch.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Base UI checkbox supporting checked and indeterminate states.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/checkbox.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Base UI radio group and radio item primitives.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/radio-group.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Base UI toggle button with default, ghost, outline, and segmented variants.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "files": [{ "path": "src/components/ui/toggle.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Segmented and connected toggle group built on Base UI.",
+      "dependencies": ["@base-ui/react", "class-variance-authority"],
+      "registryDependencies": ["toggle", "separator"],
+      "files": [{ "path": "src/components/ui/toggle-group.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Smooth height-animated Base UI disclosure panel.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/collapsible.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Base UI custom scrollbar area with optional edge scroll fade masks.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/scroll-area.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Base UI tooltip with viewport transition and default/glass variants.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/tooltip.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Glassmorphic Base UI popover with tooltip-style compact mode.",
+      "dependencies": ["@base-ui/react"],
+      "files": [{ "path": "src/components/ui/popover.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Nested-aware glassmorphic Base UI dialog with mobile sheet support and scrollable panel.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["button", "scroll-area"],
+      "files": [
+        { "path": "src/components/ui/dialog.tsx", "type": "registry:ui" },
+        { "path": "src/components/ui/dialog-styles.ts", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Confirmation modal dialog with glass backdrop and nested scaling.",
+      "dependencies": ["@base-ui/react"],
+      "files": [
+        { "path": "src/components/ui/alert-dialog.tsx", "type": "registry:ui" },
+        { "path": "src/components/ui/dialog-styles.ts", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Glassmorphic Base UI dropdown menu with checkbox, switch, radio, and submenu support.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "files": [{ "path": "src/components/ui/menu.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Glassmorphic Base UI select dropdown with scroll arrows and ghost/default triggers.",
+      "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
+      "files": [{ "path": "src/components/ui/select.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Empty state layout with layered fanned icon cards.",
+      "dependencies": ["class-variance-authority"],
+      "files": [{ "path": "src/components/ui/empty.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "title": "Autocomplete",
+      "description": "Base UI filterable autocomplete input and scrollable popup list.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["input", "scroll-area"],
+      "files": [{ "path": "src/components/ui/autocomplete.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Command palette dialog built on Base UI Dialog and Autocomplete.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["autocomplete", "button"],
+      "files": [
+        { "path": "src/components/ui/command.tsx", "type": "registry:ui" },
+        { "path": "src/components/ui/dialog-styles.ts", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Stacked glassmorphic notifications with corner dismiss orb, expandable details, and anchored toasts.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["button", "tooltip"],
+      "files": [{ "path": "src/components/ui/toast.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "animated-height",
+      "type": "registry:component",
+      "title": "Animated Height",
+      "description": "ResizeObserver-driven smooth height wrapper for expanding composer drawers and banners.",
+      "files": [{ "path": "src/components/agent/animated-height.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "composer-surface",
+      "type": "registry:component",
+      "title": "Composer Surface",
+      "description": "Glassmorphic AI chat composer shell with seamless notched bottom context strip.",
+      "files": [{ "path": "src/components/agent/composer-surface.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "composer-banner",
+      "type": "registry:component",
+      "title": "Composer Banner",
+      "description": "Composable attached or floating glass banner system with severity variants, peek stack, and scroll container.",
+      "dependencies": ["@base-ui/react", "lucide-react"],
+      "registryDependencies": ["button", "scroll-area"],
+      "files": [{ "path": "src/components/agent/composer-banner.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "composer-tasks-badge",
+      "type": "registry:component",
+      "title": "Composer Tasks Badge",
+      "description": "Segmented agent task progress pill and expandable step-by-step execution checklist.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["composer-banner"],
+      "files": [{ "path": "src/components/agent/composer-tasks-badge.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "pending-approval-panel",
+      "type": "registry:component",
+      "title": "Pending Approval Panel",
+      "description": "Interactive tool/command execution approval banner with queue count, mono payload preview, and decision actions.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["composer-banner", "button", "tooltip"],
+      "files": [{ "path": "src/components/agent/pending-approval-panel.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "context-window-meter",
+      "type": "registry:component",
+      "title": "Context Window Meter",
+      "description": "Circular SVG token-usage ring with hover popover breakdown, overload threshold alert, and compact action.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "popover"],
+      "files": [{ "path": "src/components/agent/context-window-meter.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "diff-stat-label",
+      "type": "registry:component",
+      "title": "Diff Stat Label",
+      "description": "Tabular monospace additions/deletions counter with compact k/m formatting.",
+      "files": [{ "path": "src/components/agent/diff-stat-label.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "inline-chip",
+      "type": "registry:component",
+      "title": "Inline Chip",
+      "description": "Em-scaled inline file, terminal, and skill mention pills for prompts and messages.",
+      "dependencies": ["lucide-react"],
+      "files": [{ "path": "src/components/agent/inline-chip.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "changed-files-card",
+      "type": "registry:component",
+      "title": "Changed Files Card",
+      "description": "Container-responsive turn diff summary card with compact file pills and compacted directory tree.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "tooltip", "diff-stat-label"],
+      "files": [{ "path": "src/components/agent/changed-files-card.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "proposed-plan-card",
+      "type": "registry:component",
+      "title": "Proposed Plan Card",
+      "description": "Collapsible agent implementation plan card with markdown preview, copy/export menu, and approval CTA.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["badge", "button", "menu"],
+      "files": [{ "path": "src/components/agent/proposed-plan-card.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "connection-status-dot",
+      "type": "registry:component",
+      "title": "Connection Status & Thread Pill",
+      "description": "Duty-cycled status ping dot and semantic thread lifecycle pill indicators.",
+      "registryDependencies": ["tooltip"],
+      "files": [{ "path": "src/components/agent/connection-status-dot.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "thread-error-banner",
+      "type": "registry:component",
+      "title": "Thread Error Banner",
+      "description": "Glassmorphic thread-level error alert with line-clamped full-message tooltip and dismiss control.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["alert", "button", "tooltip"],
+      "files": [{ "path": "src/components/agent/thread-error-banner.tsx", "type": "registry:component" }]
+    },
+    {
+      "name": "model-list-row",
+      "type": "registry:component",
+      "title": "Model List Row",
+      "description": "Rich model picker row with provider badge, context length, reasoning/new tags, jump keycap, and favorite toggle.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["badge", "button", "kbd", "tooltip"],
+      "files": [{ "path": "src/components/agent/model-list-row.tsx", "type": "registry:component" }]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "diff-stat-label",
+  "title": "Diff Stat Label",
+  "description": "Tabular monospace additions/deletions counter with compact k/m formatting.",
+  "files": [
+    {
+      "path": "src/components/agent/diff-stat-label.tsx",
+      "content": "import { memo } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport function hasNonZeroStat(stat: { additions: number; deletions: number }): boolean {\n  return stat.additions > 0 || stat.deletions > 0;\n}\n\nfunction formatCompactDiffCount(value: number): string {\n  if (value < 1000) return String(value);\n  if (value < 1_000_000) {\n    const k = value / 1000;\n    return `${k < 10 ? k.toFixed(1).replace(/\\.0$/, \"\") : Math.round(k)}k`;\n  }\n  if (value < 1_000_000_000) {\n    const m = value / 1_000_000;\n    return `${m < 10 ? m.toFixed(1).replace(/\\.0$/, \"\") : Math.round(m)}m`;\n  }\n  const b = value / 1_000_000_000;\n  return `${b < 10 ? b.toFixed(1).replace(/\\.0$/, \"\") : Math.round(b)}b`;\n}\n\nexport const DiffStatLabel = memo(function DiffStatLabel(props: {\n  additions: number;\n  deletions: number;\n  className?: string;\n  showParentheses?: boolean;\n  layout?: \"aligned\" | \"inline\";\n}) {\n  const { additions, deletions, className, showParentheses = false, layout = \"aligned\" } = props;\n  return (\n    <>\n      {showParentheses && <span className=\"text-muted-foreground/70\">(</span>}\n      <span\n        role=\"group\"\n        aria-label={`${additions} additions, ${deletions} deletions`}\n        className={cn(\n          layout === \"inline\"\n            ? \"inline-flex items-center gap-1 tabular-nums align-middle\"\n            : \"inline-grid grid-cols-[4ch_4ch] gap-2 text-right tabular-nums align-middle\",\n          className,\n        )}\n      >\n        <span aria-hidden=\"true\" className=\"font-mono text-success\">\n          +{formatCompactDiffCount(additions)}\n        </span>\n        <span aria-hidden=\"true\" className=\"font-mono text-destructive\">\n          -{formatCompactDiffCount(deletions)}\n        </span>\n      </span>\n      {showParentheses && <span className=\"text-muted-foreground/70\">)</span>}\n    </>\n  );\n});\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
